@@ -2,7 +2,11 @@
   Global Styles
    ================================ */
 
-
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 /* ================================
    CSS Reset / Base Setup
@@ -79,17 +83,39 @@ body {
    ================================ */
 
 /* Flex */
-.flex { display: flex; }
-.flex-center { display: flex; justify-content: center; align-items: center; }
-.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
 /* Grids */
-.grid { display: grid; }
+.grid {
+  display: grid;
+}
 
 /* Text */
-.text-muted { color: $color-text-muted; }
-.text-soft { color: $color-text-soft; }
-.text-center { text-align: center; }
+.text-muted {
+  color: $color-text-muted;
+}
+
+.text-soft {
+  color: $color-text-soft;
+}
+
+.text-center {
+  text-align: center;
+}
 
 /* Buttons — simple global fallback */
 .btn-primary {
@@ -135,7 +161,6 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: $color-primary;
 }
-
 
 /* ================================
    Responsive Helpers
