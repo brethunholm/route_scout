@@ -1,4 +1,13 @@
 /* ================================
+   Imports
+   ================================ */
+
+@use "../styles/colors.scss" as *;
+@use "../styles/variables.scss" as *;
+@use "../styles/typography.scss" as *;
+@use "../styles/mixins.scss" as *;
+
+/* ================================
   Global Styles
    ================================ */
 
@@ -75,7 +84,7 @@ body {
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
-  padding: $space-5;
+  padding: $space-lg;
 }
 
 /* ================================
@@ -131,10 +140,10 @@ body {
   @extend .heading-section;
 }
 
-/* Retro “badge” shadow for cards */
+/* Retro "badge" shadow for cards */
 .rs-card {
   @include card;
-  padding: $space-4;
+  padding: $space-md;
   border-radius: $radius-md;
   background: $color-surface;
 }
@@ -168,6 +177,6 @@ body {
 
 @media (max-width: $bp-md) {
   .rs-container {
-    padding: $space-3;
+    padding: $space-sm;
   }
 }

@@ -1,0 +1,68 @@
+/* ============================
+   Font Families
+   ============================ */
+
+// USAGE RULES:
+// - $font-sans: body text, UI elements, form inputs
+// - $font-display: headings, hero titles, section headers
+// - $font-mono: code snippets, technical data (coordinates, timestamps)
+// - Font sizes: xs-sm = captions/labels, md-lg = body/UI, xl+ = headings
+// - Line heights: tight = headings, snug = subheadings, normal = body text
+
+$font-sans:
+  "Inter",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  Helvetica,
+  Arial,
+  sans-serif;
+
+$font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+
+$font-mono:
+  "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
+
+/* ============================
+   Font Sizes
+   ============================ */
+
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 22px;
+$font-size-2xl: 28px;
+$font-size-3xl: 36px;
+$font-size-4xl: 44px;
+
+/* ============================
+   Line Heights
+   ============================ */
+
+$lh-tight: 1.1;
+$lh-snug: 1.25;
+$lh-normal: 1.5;
+
+/* ============================
+   Heading Utilities
+   ============================ */
+
+.heading-hero {
+  font-family: $font-display;
+  font-size: $font-size-4xl;
+  line-height: $lh-tight;
+}
+
+.heading-section {
+  font-family: $font-display;
+  font-size: $font-size-2xl;
+  line-height: $lh-snug;
+}
+
+.text-body {
+  font-family: $font-sans;
+  font-size: $font-size-md;
+  line-height: $lh-normal;
+}

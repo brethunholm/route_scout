@@ -1,0 +1,104 @@
+/* ============================
+   Mixins & Utilities
+   ============================ */
+
+// USAGE RULES:
+// - @include button-primary: Use for primary CTAs ("Plan Trip", "Save Route")
+// - @include card: Use for content containers with retro badge shadow
+// - @include input-field: Use for text inputs, textareas, selects
+// - @include truncate: Single-line text overflow with ellipsis
+// - @include visually-hidden: Hide elements visually but keep for screen readers
+
+@use "colors" as *;
+@use "variables" as *;
+@use "typography" as *;
+
+/* Button Primary */
+@mixin button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-sm $space-lg;
+  font-weight: 600;
+  font-size: $font-size-md;
+  line-height: 1;
+  color: #ffffff;
+  background: $color-primary;
+  border: 2px solid $color-primary-dark;
+  border-radius: $radius-md;
+  box-shadow: $shadow-badge;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: $color-primary-soft;
+    transform: translateY(-1px);
+    box-shadow: 3px 3px 0 rgba(44, 36, 22, 0.25);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 1px 1px 0 rgba(44, 36, 22, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+/* Card with retro badge shadow */
+@mixin card {
+  background: $color-surface;
+  border: 2px solid $color-border;
+  box-shadow: $shadow-badge;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 3px 3px 0 rgba(44, 36, 22, 0.25);
+  }
+}
+
+/* Input styling */
+@mixin input-field {
+  width: 100%;
+  padding: $space-sm $space-md;
+  font-size: $font-size-md;
+  line-height: $lh-normal;
+  color: $color-text-main;
+  background: $color-surface;
+  border: 2px solid $color-border;
+  border-radius: $radius-md;
+  transition: border-color 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba(224, 122, 61, 0.1);
+  }
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+}
+
+/* Truncate text with ellipsis */
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Visually hidden (accessible) */
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

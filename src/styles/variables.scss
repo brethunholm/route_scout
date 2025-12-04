@@ -1,0 +1,48 @@
+// ==========================================
+// ROUTESCOUT DESIGN TOKENS
+// Spacing, breakpoints, and other reusable values
+// ==========================================
+
+// USAGE RULES:
+// - Always use tokens instead of hard-coded values (use $space-md, not 16px)
+// - Spacing: xs-sm = tight elements, md-lg = standard components, xl+ = sections
+// - Radius: sm = inputs/cards, md = buttons/modals, lg = hero sections, full = pills
+// - Breakpoints: Use @media (max-width: $bp-md) for mobile-first responsive design
+// - Never create one-off spacing values; if needed, add to this scale
+
+// ============================
+// Spacing Scale (T-shirt sizes)
+// ============================
+
+$space-none: 0;
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+$space-2xl: 48px;
+$space-3xl: 64px;
+$space-4xl: 96px;
+$space-5xl: 128px;
+
+// ============================
+// Border Radius
+// ============================
+
+$radius-none: 0;
+$radius-sm: 4px;
+$radius-md: 8px;
+$radius-lg: 12px;
+$radius-xl: 16px;
+$radius-full: 9999px;
+
+// ============================
+// Responsive Breakpoints
+// ============================
+
+$bp-xs: 480px;
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+$bp-2xl: 1536px;
