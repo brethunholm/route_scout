@@ -1,0 +1,106 @@
+@use "../../../../styles" as *;
+
+/* ===========================================
+   ROUTESCOUT APPSHELL — GLOBAL LAYOUT STYLES
+   Wraps the entire application UI
+   For use with class="app-shell"
+   =========================================== */
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: $color-cream;
+  color: $color-text-dark;
+}
+
+/* -------------------------------------------
+   Header Wrapper
+   Sticky across all pages
+------------------------------------------- */
+.app-shell__header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(6px);
+  background: rgba($color-cream, 0.92);
+  border-bottom: 1px solid $color-border;
+}
+
+/* -------------------------------------------
+   Main area for page content
+------------------------------------------- */
+.app-shell__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------------------------------------------
+   Generic content container
+   Use for centered content pages
+------------------------------------------- */
+.app-shell__content {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1.5rem 1.75rem 2.5rem;
+}
+
+/* Optional "card-restricted layout style" */
+.app-shell__content--card {
+  @include card;
+  background: $color-panel-bg;
+  border-radius: 18px;
+  padding: 1.5rem;
+}
+
+/* -------------------------------------------
+   Full-bleed container for map-heavy layouts
+   Used on /trip for map + sidebar combo
+------------------------------------------- */
+.app-shell__full-bleed {
+  flex: 1;
+  display: flex;
+  min-height: 0; // required so inner flex children can scroll
+}
+
+/* -------------------------------------------
+   Overlay / backdrop for mobile nav or copilot
+------------------------------------------- */
+.app-shell__backdrop {
+  position: fixed;
+  inset: 0;
+  background: $color-overlay-dark;
+  z-index: 30;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease-out;
+
+  &.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* -------------------------------------------
+   Section wrapper with max-width
+------------------------------------------- */
+.app-shell__section {
+  width: 100%;
+  max-width: 1080px;
+  margin-inline: auto;
+}
+
+/* -------------------------------------------
+   Responsive adjustments
+------------------------------------------- */
+@media (max-width: 768px) {
+  .app-shell__header {
+    backdrop-filter: blur(10px);
+  }
+
+  .app-shell__content {
+    padding: 1.25rem 1rem 2rem;
+  }
+}

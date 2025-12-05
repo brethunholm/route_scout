@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧭 RouteScout — Road Trip Planner
 
-## Getting Started
+RouteScout is a modern road-trip planning application built with **Next.js**, **Mapbox**, and **AI-assisted trip suggestions**.  
+It helps users plan a drive, explore curated stops along the route (gas, food, hotels, attractions, dog-friendly locations), and optimize their trip using filters or an integrated AI Copilot.
 
-First, run the development server:
+This project was designed and developed as part of my professional portfolio to showcase my skills in **frontend architecture, interactive mapping, API integration, UI/UX design, and modern React/Next.js development**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Key Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 🚗 Trip Planning
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Enter **start** and **destination** to generate a driving route
+- Interactive map with zoom, pan, and retro-inspired styling
+- Clean, responsive UI with SCSS Modules
 
-## Learn More
+### 🏕 Route-Aware Suggestions
 
-To learn more about Next.js, take a look at the following resources:
+Automatic recommendations along the drive:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Gas stations
+- Restaurants & cafés
+- Hotels
+- Attractions
+- Dog-friendly stops (keyword/attribute filtering)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Filtering options include:
 
-## Deploy on Vercel
+- Rating threshold (e.g., 4.0+)
+- Max detour distance/time
+- Stop categories
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📍 Stop Details & Itinerary Builder
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- View ratings, categories, distance off route, and photos
+- Add stops to a lightweight, client-side itinerary
+- Save itinerary in localStorage
+
+### 🤖 AI Copilot (Optional)
+
+A chat-based planning assistant powered by the **OpenAI API**:
+
+- "Suggest a lunch stop 2 hours into my drive"
+- "Split this into a 2-day trip with an overnight stay"
+- "Show me dog-friendly cafés along this route"
+- Returns structured suggestions you can add to the itinerary
+
+---
+
+## 🧰 Tech Stack
+
+### Frontend
+
+- **Next.js (App Router)**
+- **React**
+- **SCSS Modules + global design tokens**
+- **Mapbox GL JS** for map rendering and custom styling
+
+### Backend (within Next.js)
+
+- Next.js **Route Handlers** in `/app/api`
+- Server-side fetching of:
+  - Routing
+  - Geocoding
+  - Places / POIs
+  - AI responses
+
+### Data Providers
+
+#### Maps & Routing
+
+- **Mapbox GL JS**  
+  https://docs.mapbox.com/mapbox-gl-js/
+
+#### Routing & Geocoding (choose one)
+
+- **Google Directions + Geocoding API**  
+   https://developers.google.com/maps/documentation  
+  or
+- **Geoapify Routing API**  
+  https://www.geoapify.com/api/
+
+#### Places Data (Gas, Food, Hotels, Attractions)
+
+- **Google Places API**  
+   https://developers.google.com/maps/documentation/places/web-service  
+  or
+- **Foursquare Places API**  
+   https://location.foursquare.com/developer/reference/places-api  
+  or
+- **Geoapify Places API**  
+  https://www.geoapify.com/places-api
+
+#### AI Copilot
+
+- **OpenAI API**  
+  https://platform.openai.com/docs
+
+---

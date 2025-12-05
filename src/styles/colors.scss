@@ -1,0 +1,112 @@
+// ==========================================
+// ROUTESCOUT COLOR SYSTEM
+// Inspired by retro national park signage
+// Pulled from UI mockups in design PDFs
+// ==========================================
+
+// USAGE RULES:
+// - Use semantic names (e.g., $color-orange) for most UI elements
+// - Use legacy aliases ($color-primary, $color-text-main) when building reusable components
+// - Prefer specific colors for branded elements (buttons = $color-orange, not $color-primary)
+// - Use terrain colors ($color-earth-*) exclusively for map components
+// - Always use CSS custom properties (--rs-*) when passing colors to JavaScript
+
+// 🌤️ Neutrals & Base Backgrounds
+$color-cream: #f9f1df; // Warm cream background (homepage hero)
+$color-cream-light: #faf6eb; // Lighter paper tone for panels
+$color-sand: #e7d9bd; // Sidebar light-tan background (planner)
+$color-sand-medium: #d8c8a5; // Slightly darker panel borders
+$color-sand-dark: #bfae8d; // Divider lines, subtle shadows
+$color-brown-text: #4d3b2c; // Main heading text color ("Plan a smarter road trip")
+
+// 🟧 Oranges & Terracottas (Buttons, Highlights, Route Color)
+$color-orange: #d97a33; // Primary orange button ("Plan Trip")
+$color-orange-dark: #c06526; // Hover / active orange
+$color-orange-light: #e8a46c; // Chip backgrounds, soft accents
+$color-route-orange: #d36c2f; // Road route line color on map
+
+// 🌲 Greens (Map overlays, decorative shapes, nature vibe)
+$color-green-dark: #2f4b38; // Dark forest green (trees in hero)
+$color-green: #4c694d; // Mid-tone green (map vegetation shapes)
+$color-green-light: #6f8c69; // Light green (highlight zones on map)
+
+// 🟦 Teal / Blue Accents (Hotel icon, secondary markers)
+$color-teal: #3b6d6b; // Hotel / amenities marker color
+$color-teal-light: #5d8e8c; // Hover states for teal markers
+
+// 🌾 Earth & Terrain Tones (Map background colors)
+$color-earth-light: #f1dfb9; // Map base warm yellow-beige
+$color-earth-medium: #e3c89a; // Land areas
+$color-earth-dark: #caa774; // Contours, topographic shadows
+
+// 🟥 Reds / Alerts (optional)
+$color-red: #b6493e;
+$color-red-light: #e07f75;
+
+// 🔤 Text Colors
+$color-text-dark: #3a2e23; // Primary UI text
+$color-text-medium: #5d4c3a; // Labels, secondary text
+$color-text-light: #8c7863; // Subtle text (timestamps, meta info)
+
+// 🎛️ UI Elements
+$color-border: #d7c9b4;
+$color-border-dark: #b9a98e;
+$color-panel-bg: #f3ebd7;
+$color-panel-bg-dark: #e7dbc3;
+
+// Transparency helpers
+$color-overlay-light: rgba(0, 0, 0, 0.05);
+$color-overlay-medium: rgba(0, 0, 0, 0.15);
+$color-overlay-dark: rgba(0, 0, 0, 0.3);
+
+// ==========================================
+// LEGACY ALIASES (for backwards compatibility)
+// ==========================================
+
+/* Primary: warm vintage orange/rust */
+$color-primary: $color-orange;
+$color-primary-soft: $color-orange-light;
+$color-primary-dark: $color-orange-dark;
+
+/* Accent: retro teal/turquoise */
+$color-accent: $color-teal;
+$color-accent-soft: $color-teal-light;
+$color-accent-dark: #4a9090;
+
+/* Background & Surfaces */
+$color-bg: $color-cream;
+$color-surface: #ffffff;
+$color-surface-alt: $color-sand;
+
+/* Text */
+$color-text-main: $color-text-dark;
+$color-text-soft: $color-text-medium;
+$color-text-muted: $color-text-light;
+
+/* Semantic Colors */
+$color-success: $color-green;
+$color-warning: $color-orange-light;
+$color-error: $color-red;
+$color-info: $color-teal;
+
+/* Shadows (subtle retro) */
+$shadow-sm: 0 1px 2px rgba(44, 36, 22, 0.1);
+$shadow-md:
+  0 2px 6px rgba(44, 36, 22, 0.12),
+  0 1px 3px rgba(44, 36, 22, 0.08);
+$shadow-lg:
+  0 4px 12px rgba(44, 36, 22, 0.15),
+  0 2px 6px rgba(44, 36, 22, 0.1);
+$shadow-badge: 2px 2px 0 rgba(44, 36, 22, 0.2); /* retro offset shadow */
+
+// ==========================================
+// EXPORTS FOR CONSISTENCY
+// ==========================================
+
+:root {
+  --rs-cream: #{$color-cream};
+  --rs-orange: #{$color-orange};
+  --rs-green: #{$color-green};
+  --rs-teal: #{$color-teal};
+  --rs-text-dark: #{$color-text-dark};
+}

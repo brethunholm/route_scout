@@ -1,0 +1,154 @@
+// Header.scss
+@use "../../../../styles" as *;
+
+/* ===========================================
+   ROUTESCOUT HEADER
+   Full-width white bar at top (matches mockup)
+   =========================================== */
+
+.header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid $color-border;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Main header bar - centered content */
+.header__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-lg;
+
+  width: 100%;
+  padding: $space-md $space-md;
+  min-height: 72px;
+
+  @media (max-width: $bp-md) {
+    padding: $space-sm $space-md;
+    min-height: 64px;
+    gap: $space-md;
+  }
+}
+
+/* -------------------------------------------
+   Left: Hamburger + Logo
+------------------------------------------- */
+
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+
+  @media (max-width: $bp-md) {
+    gap: $space-sm;
+  }
+}
+
+/* Hamburger menu button */
+.header__menu-button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: $space-xs;
+  margin: 0;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  border-radius: $radius-sm;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.header__menu-line {
+  width: 22px;
+  height: 2.5px;
+  border-radius: $radius-full;
+  background: $color-text-dark;
+  transition: all 0.2s ease;
+
+  @media (max-width: $bp-md) {
+    width: 20px;
+    height: 2px;
+  }
+}
+
+/* Logo container */
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__logo-svg {
+  height: 32px;
+  width: auto;
+  display: block;
+
+  @media (max-width: $bp-md) {
+    height: 28px;
+  }
+}
+
+/* -------------------------------------------
+   Right: Icons + Plan Trip button
+------------------------------------------- */
+
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+
+  @media (max-width: $bp-md) {
+    gap: $space-sm;
+  }
+}
+
+/* Icon buttons (envelope, info) */
+.header__icon-button {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: $space-xs;
+  margin: 0;
+  cursor: pointer;
+  border-radius: $radius-sm;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-dark;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Plan Trip button */
+.header__cta {
+  @include button-primary;
+  font-size: $font-size-md;
+  font-weight: 600;
+  padding: $space-sm $space-lg;
+  white-space: nowrap;
+
+  @media (max-width: $bp-sm) {
+    font-size: $font-size-sm;
+    padding: $space-xs $space-md;
+  }
+}
