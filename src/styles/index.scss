@@ -1,0 +1,10 @@
+// ==========================================
+// ROUTESCOUT DESIGN SYSTEM INDEX
+// Single import point for all design tokens
+// Usage: @use "path/to/styles" as *;
+// ==========================================
+
+@forward "colors";
+@forward "variables";
+@forward "typography";
+@forward "mixins";
