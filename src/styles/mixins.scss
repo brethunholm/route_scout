@@ -3,7 +3,7 @@
    ============================ */
 
 // USAGE RULES:
-// - @include button-primary: Use for primary CTAs ("Plan Trip", "Save Route")
+// - @include button-primary: Use for primary CTAs
 // - @include card: Use for content containers with retro badge shadow
 // - @include input-field: Use for text inputs, textareas, selects
 // - @include truncate: Single-line text overflow with ellipsis
@@ -101,4 +101,11 @@
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Focus ring for accessibility */
+@mixin focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba($color-primary, 0.3);
+  transition: box-shadow 0.2s ease;
 }
