@@ -1,0 +1,47 @@
+@use "../../../styles" as *;
+
+/* ===========================================
+   INPUT COMPONENT
+   =========================================== */
+
+.input {
+  width: 100%;
+  padding: $space-sm $space-md;
+  font-family: $font-sans;
+  font-size: $font-size-md;
+  line-height: 1;
+  color: $color-text-dark;
+  background: #ffffff;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  transition: all 0.2s ease;
+
+  &::placeholder {
+    color: $color-text-light;
+  }
+
+  &:hover {
+    border-color: $color-border-dark;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-orange;
+    box-shadow: 0 0 0 3px rgba($color-orange, 0.1);
+  }
+
+  &:disabled {
+    background: $color-sand;
+    color: $color-text-light;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &.input--error {
+    border-color: $color-red;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-red, 0.1);
+    }
+  }
+}
