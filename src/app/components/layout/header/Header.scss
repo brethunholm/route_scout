@@ -17,8 +17,7 @@
 .header__bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: $space-lg;
+  gap: $space-2xl;
 
   width: 100%;
   padding: $space-md $space-md;
@@ -28,6 +27,7 @@
     padding: $space-sm $space-md;
     min-height: 64px;
     gap: $space-md;
+    flex-wrap: wrap;
   }
 }
 
@@ -98,16 +98,33 @@
 }
 
 /* -------------------------------------------
-   Right: Icons + Plan Trip button
+   Right: Inputs + Plan Trip button
 ------------------------------------------- */
 
 .header__right {
   display: flex;
   align-items: center;
   gap: $space-md;
+  flex: 1;
+  max-width: 800px;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 
   @media (max-width: $bp-md) {
     gap: $space-sm;
+    width: 100%;
+    max-width: none;
+  }
+
+  .input {
+    flex: 1;
+    min-width: 180px;
+
+    @media (max-width: $bp-md) {
+      min-width: 140px;
+    }
   }
 }
 
