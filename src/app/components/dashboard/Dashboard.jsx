@@ -1,5 +1,5 @@
 import "./Dashboard.scss";
-import Hero from "./components/Hero/Hero";
+import Hero from "./Hero";
 import { useTripContext } from "../../context/TripContext";
 
 export default function Dashboard() {
