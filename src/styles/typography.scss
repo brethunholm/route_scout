@@ -10,7 +10,7 @@
 // - Line heights: tight = headings, snug = subheadings, normal = body text
 
 $font-sans:
-  "Inter",
+  var(--font-inter),
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
@@ -18,10 +18,10 @@ $font-sans:
   Arial,
   sans-serif;
 
-$font-display: "DM Serif Display", Georgia, "Times New Roman", serif;
+$font-display: var(--font-dm-serif), Georgia, "Times New Roman", serif;
 
 $font-mono:
-  "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+  var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
   "Liberation Mono", "Courier New", monospace;
 
 /* ============================
