@@ -2,21 +2,8 @@
 
 import "./Hero.scss";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 
 export default function Hero({ onStartPlanning }) {
-  const [isDesktop, setIsDesktop] = useState(true);
-
-  useEffect(() => {
-    const checkDesktop = () => {
-      setIsDesktop(window.innerWidth >= 950);
-    };
-
-    checkDesktop();
-    window.addEventListener("resize", checkDesktop);
-    return () => window.removeEventListener("resize", checkDesktop);
-  }, []);
-
   return (
     <section className="hero">
       <div className="hero__content">
@@ -28,17 +15,15 @@ export default function Hero({ onStartPlanning }) {
           Plan your first trip
         </button>
       </div>
-      {isDesktop && (
-        <div className="hero__image">
-          <Image
-            src="/images/road-illustration.png"
-            alt="Scenic road illustration"
-            width={380}
-            height={420}
-            priority
-          />
-        </div>
-      )}
+      <div className="hero__image">
+        <Image
+          src="/images/road-illustration.png"
+          alt="Scenic road illustration"
+          width={380}
+          height={420}
+          priority
+        />
+      </div>
     </section>
   );
 }
