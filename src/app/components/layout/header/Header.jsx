@@ -4,19 +4,17 @@ import { useState } from "react";
 import "./Header.scss";
 import RouteScoutLogo from "../../icons/RouteScoutLogo";
 import Input from "../../pieces/Input";
+import { useTripContext } from "../../../context/TripContext";
 
-export default function Header({ onOpenMenu, onTripSubmit }) {
+export default function Header({ onOpenMenu }) {
+  const { updateTrip } = useTripContext();
   const [origin, setOrigin] = useState("");
   const [destination, setDestination] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (origin && destination && onTripSubmit) {
-      onTripSubmit({
-        origin,
-        destination,
-        departureTime: new Date().toISOString(),
-      });
+    if (origin.trim() && destination.trim()) {
+      updateTrip({ origin, destination });
     }
   };
 

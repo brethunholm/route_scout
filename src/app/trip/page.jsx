@@ -1,10 +1,7 @@
-function TripPage() {
-  return (
-    <div>
-      <h1>Trip Page</h1>
-      <p>Welcome to the Trip Page!</p>
-    </div>
-  );
-}
+"use client";
 
-export default TripPage;
+import Dashboard from "../components/dashboard/Dashboard";
+
+export default function TripPage() {
+  return <Dashboard />;
+}

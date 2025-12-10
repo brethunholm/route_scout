@@ -1,10 +1,16 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, DM_Serif_Display, Geist_Mono } from "next/font/google";
 import AppShell from "./components/layout/appShell/AppShell";
 import "./app.scss";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+});
+
+const dmSerifDisplay = DM_Serif_Display({
+  variable: "--font-dm-serif",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 const geistMono = Geist_Mono({
@@ -21,7 +27,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} app-root`}>
+      <body
+        className={`${inter.variable} ${dmSerifDisplay.variable} ${geistMono.variable}`}
+      >
         <AppShell>{children}</AppShell>
       </body>
     </html>

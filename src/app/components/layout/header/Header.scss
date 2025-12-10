@@ -20,7 +20,9 @@
   gap: $space-2xl;
 
   width: 100%;
-  padding: $space-md $space-md;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: $space-md $space-2xl;
   min-height: 72px;
 
   @media (max-width: $bp-md) {
